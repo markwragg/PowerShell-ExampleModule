@@ -8,4 +8,4 @@ build: false
 
 # Start tests
 test_script:
-  - pwsh: Invoke-Pester
+  - pwsh: ./test.ps1
