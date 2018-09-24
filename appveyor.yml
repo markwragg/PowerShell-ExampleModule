@@ -1,6 +1,11 @@
+# Specify build images to use
 image:
 - Ubuntu
 - Visual Studio 2017
 
+# Need to disable build, as otherwise it attempts to do msbuild by default.
+build: false
+
+# Start tests
 test_script:
   - pwsh: Invoke-Pester
