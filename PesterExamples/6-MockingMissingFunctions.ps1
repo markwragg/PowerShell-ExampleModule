@@ -26,8 +26,6 @@ function Remove-ADDisabledUser {
 }
 
 Describe 'Remove-ADDisabledUser tests' {
-    Function Get-ADUser { }
-    Function Remove-ADUser { }
     
     Mock Get-ADUser {
         New-Object Microsoft.ActiveDirectory.Management.ADUser Identity -Property @{
