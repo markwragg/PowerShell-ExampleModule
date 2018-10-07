@@ -1,4 +1,4 @@
-$Root = Resolve-Path "$PSScriptRoot/.."
+$Root = Split-Path $PSScriptRoot -Parent
 $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path) -replace '\.Tests\.', '.'
 
 . "$Root/ExampleModule/Public/$sut"
