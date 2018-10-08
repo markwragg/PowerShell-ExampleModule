@@ -1,12 +1,4 @@
-function Get-TempFile ($Path) {
-    Get-ChildItem "$Path/*.tmp"
-}
-
-function Remove-TempFile ($Path) {
-    $TempFiles = Get-TempFile -Path $Path
-    $TempFiles | Remove-Item
-}
-
+. './4-MockingExample.ps1'
 Describe 'Remove-TempFile tests' {
     Mock Remove-Item { }
 

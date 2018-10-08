@@ -9,7 +9,8 @@ function Remove-ADDisabledUser {
     )
 
     $Users = Get-ADUser -Filter 'Enabled -eq $false' -Properties LastLogonDate
-    $Users = $Users | Where-Object { $_.LastLogonDate -lt (Get-Date).AddDays(-$Days) }
+    $Users = $Users | Where-Object { $_.LastLogonDate -lt `
+    (Get-Date).AddDays(-$Days) }
 
     if (-not $Users) {
         Write-Verbose "No disabled users found older than $Days days"

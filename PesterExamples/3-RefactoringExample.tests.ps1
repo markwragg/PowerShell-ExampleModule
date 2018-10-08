@@ -1,11 +1,4 @@
-function Get-TempFile ($Path) {
-    Get-ChildItem "$Path/*.tmp"
-}
-
-function Remove-TempFile ($Path) {
-    $TempFiles = Get-TempFile -Path $Path
-    $TempFiles | Remove-Item
-}
+. './3-RefactoringExample.ps1'
 
 Describe 'Get-TempFile tests' {
     New-Item TestDrive:/test.tmp
