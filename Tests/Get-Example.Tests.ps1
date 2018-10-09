@@ -1,10 +1,14 @@
 $Root = Split-Path $PSScriptRoot -Parent
-$sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path) -replace '\.Tests\.', '.'
 
-. "$Root/ExampleModule/Public/$sut"
+Import-Module "$Root/ExampleModule/"
 
-Describe "Get-Example" {
-    It "does something useful" {
-        Get-Example | Should -Be 'I am an example!'
+Describe 'Get-Example' {
+
+    InModuleScope 'ExampleModule' {
+
+        It 'Should return "I am an example"' {
+            Get-Example | Should -Be 'I am an example!'
+        }
+        
     }
 }

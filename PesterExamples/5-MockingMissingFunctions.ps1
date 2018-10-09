@@ -1,3 +1,6 @@
+
+# Invoke-Pester ./5-MockingMissingFunctions.tests.ps1 -CodeCoverage ./5-MockingMissingFunctions.ps1
+
 function Remove-ADDisabledUser {
     [cmdletbinding()]
     Param(
