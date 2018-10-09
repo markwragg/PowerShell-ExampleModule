@@ -1,4 +1,4 @@
-. './5-MockingMissingFunctions.ps1'
+. './6-AddedCodeCoverage.ps1'
 
 Describe 'Remove-ADDisabledUser tests' {
     Function Get-ADUser { }
@@ -29,7 +29,7 @@ Describe 'Remove-ADDisabledUser tests' {
 
         It 'Should invoke Write-Verbose' {
             Remove-ADDisabledUser -Verbose
-            Assert-MockCalled Write-Verbose
+            Assert-MockCalled Write-Verbose -Times 1 -Exactly
         }
     }
 }

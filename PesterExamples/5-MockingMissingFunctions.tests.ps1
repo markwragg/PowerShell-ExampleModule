@@ -1,6 +1,7 @@
 . './5-MockingMissingFunctions.ps1'
 
 Describe 'Remove-ADDisabledUser tests' {
+
     Function Get-ADUser { }
     Function Remove-ADUser { }
 
@@ -20,5 +21,5 @@ Describe 'Remove-ADDisabledUser tests' {
 
     It 'Should return one user' {
         @((Remove-ADDisabledUser -OutputUsers)).count | Should -Be 1
-    }
+    } 
 }

@@ -1,3 +1,6 @@
+
+# Invoke-Pester ./6-AddedCodeCoverage.tests.ps1 -CodeCoverage ./6-AddedCodeCoverage.ps1
+
 function Remove-ADDisabledUser {
     [cmdletbinding()]
     Param(

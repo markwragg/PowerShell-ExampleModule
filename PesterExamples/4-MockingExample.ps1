@@ -1,5 +1,5 @@
 function Get-TempFile ($Path) {
-    Get-ChildItem "$Path/*.tmp"
+    Get-ChildItem "$Path/*tmp*"
 }
 
 function Remove-TempFile ($Path) {
