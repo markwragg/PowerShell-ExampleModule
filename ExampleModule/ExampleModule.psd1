@@ -21,13 +21,13 @@ ModuleVersion = '0.0.1'
 GUID = 'dac2e49c-1c99-4f6c-90f8-20a1123a4691'
 
 # Author of this module
-Author = 'mark.wragg'
+Author = 'Mark Wragg'
 
 # Company or vendor of this module
 CompanyName = 'Unknown'
 
 # Copyright statement for this module
-Copyright = '(c) mark.wragg. All rights reserved.'
+Copyright = '(c) Mark Wragg. All rights reserved.'
 
 # Description of the functionality provided by this module
 # Description = ''
