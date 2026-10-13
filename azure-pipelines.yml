@@ -1,31 +1,20 @@
 variables:
 - group: powershell-gallery
-# The single source of truth for which branch is allowed to deploy (passed to the Deploy step's
-# env below, which gates the actual PSGallery publish in deploy.psdeploy.ps1). ADO resolves
-# trigger/pr branch filters before pipeline variables exist, so they can't reference $(DeployBranch)
-# directly -- if you change this, also update the two branches.include lists immediately below to match.
+
 - name: DeployBranch
-  value: master
+  value: main
 
 trigger:
   batch: true
 
-  # What branches will trigger a build? Keep in sync with the DeployBranch variable above.
   branches:
     include:
-      # Any Pull Request merging into the master branch
-      - master
+      - main
 
-# Also build Pull Requests targeting master, so tests/analysis run before merge.
-# Steps that publish (wiki, gallery, commit-back) live only in the Build stage,
-# which is individually conditioned to skip when Build.Reason is 'PullRequest',
-# so a PR build only validates the change - it never pushes to the wiki, the
-# PowerShell Gallery, or the repo.
-# Keep in sync with the DeployBranch variable above.
 pr:
   branches:
     include:
-      - master
+      - main
 
 stages:
   - stage: Test
